@@ -1,0 +1,12 @@
+matlab-actions/setup-matlab@v1
+matlab-actions/run-command@v1
+% Euler’s method
+t0 = 0;
+tf = 20;
+h = 1/16;
+y1(1) = -1/2; % set initial condition
+y1 = zeros(1,length(t));
+f=@(t,y1)(sin(t)*(1 - y1));
+for n = 1 :(length(t)-1)
+y1(n+1)= y1(n)+h*f(t(n),y1(n));
+end
